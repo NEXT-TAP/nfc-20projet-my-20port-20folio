@@ -11,7 +11,6 @@
 
     <title>Next Tap | Digital Solutions</title>
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -20,13 +19,11 @@
         rel="stylesheet"
     >
 
-    <!-- Font Awesome -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -45,22 +42,111 @@
         >
     </a>
 
-    <nav class="nav">
-        <a href="#services">Services</a>
-        <a href="#how">Comment ça marche</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
+    <nav class="nav" id="mainNav">
+
+        <a href="#services" data-i18n="nav.services">
+            Services
+        </a>
+
+        <a href="#how" data-i18n="nav.how">
+            Comment ça marche
+        </a>
+
+        <a href="#portfolio" data-i18n="nav.portfolio">
+            Portfolio
+        </a>
+
+        <a href="#contact" data-i18n="nav.contact">
+            Contact
+        </a>
+
     </nav>
 
-    <a
-        class="header-btn"
-        href="https://wa.me/212717354208"
-        target="_blank"
-        rel="noopener"
-    >
-        <i class="fa-brands fa-whatsapp"></i>
-        WhatsApp
-    </a>
+    <div class="header-right">
+
+        <!-- LANGUAGE -->
+
+        <div class="language-switcher" id="languageSwitcher">
+
+            <button
+                class="language-toggle"
+                id="languageToggle"
+                type="button"
+                aria-label="Change language"
+            >
+                <i class="fa-solid fa-globe"></i>
+
+                <span
+                    class="language-current"
+                    id="languageCurrent"
+                >
+                    FR
+                </span>
+
+                <i class="fa-solid fa-chevron-down language-chevron"></i>
+            </button>
+
+            <div class="language-menu" id="languageMenu">
+
+                <button
+                    class="language-option active"
+                    data-lang="fr"
+                    type="button"
+                >
+                    <span class="flag">🇫🇷</span>
+                    <span class="lang-name">Français</span>
+                    <i class="fa-solid fa-check check"></i>
+                </button>
+
+                <button
+                    class="language-option"
+                    data-lang="en"
+                    type="button"
+                >
+                    <span class="flag">🇬🇧</span>
+                    <span class="lang-name">English</span>
+                    <i class="fa-solid fa-check check"></i>
+                </button>
+
+                <button
+                    class="language-option"
+                    data-lang="ar"
+                    type="button"
+                >
+                    <span class="flag">🇲🇦</span>
+                    <span class="lang-name">العربية</span>
+                    <i class="fa-solid fa-check check"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- WHATSAPP -->
+
+        <a
+            class="header-btn"
+            href="https://wa.me/212717354208"
+            target="_blank"
+            rel="noopener"
+        >
+            <i class="fa-brands fa-whatsapp"></i>
+            <span data-i18n="nav.whatsapp">WhatsApp</span>
+        </a>
+
+        <!-- MOBILE MENU -->
+
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
 
 </header>
 
@@ -77,15 +163,22 @@
 
         <span class="eyebrow">
             <span></span>
-            NEXT TAP • DIGITAL SOLUTIONS
+            <span data-i18n="hero.eyebrow">
+                NEXT TAP • DIGITAL SOLUTIONS
+            </span>
         </span>
 
         <h1>
-            Digital Presence.<br>
-            <span>One Tap Away.</span>
+            <span data-i18n="hero.title1">
+                Digital Presence.
+            </span>
+            <br>
+            <span data-i18n="hero.title2">
+                One Tap Away.
+            </span>
         </h1>
 
-        <p>
+        <p data-i18n="hero.description">
             Des cartes NFC et des pages digitales professionnelles,
             adaptées à chaque activité. Une seule carte pour présenter
             votre marque, vos services, vos réseaux et votre contact.
@@ -100,14 +193,18 @@
                 rel="noopener"
             >
                 <i class="fa-brands fa-whatsapp"></i>
-                Discuter sur WhatsApp
+                <span data-i18n="hero.whatsapp">
+                    Discuter sur WhatsApp
+                </span>
             </a>
 
             <a
                 class="btn btn-outline"
                 href="#portfolio"
             >
-                Voir le portfolio
+                <span data-i18n="hero.portfolio">
+                    Voir le portfolio
+                </span>
                 <i class="fa-solid fa-arrow-down"></i>
             </a>
 
@@ -117,33 +214,32 @@
 
             <span>
                 <i class="fa-solid fa-wifi"></i>
-                NFC Cards
+                <span data-i18n="hero.nfc">NFC Cards</span>
             </span>
 
             <span>
                 <i class="fa-solid fa-globe"></i>
-                Digital Pages
+                <span data-i18n="hero.pages">Digital Pages</span>
             </span>
 
             <span>
                 <i class="fa-solid fa-qrcode"></i>
-                QR Code
+                <span data-i18n="hero.qr">QR Code</span>
             </span>
 
             <span>
                 <i class="fa-solid fa-share-nodes"></i>
-                Social Links
+                <span data-i18n="hero.social">Social Links</span>
             </span>
 
             <span>
                 <i class="fa-solid fa-location-dot"></i>
-                Google Maps
+                <span data-i18n="hero.maps">Google Maps</span>
             </span>
 
         </div>
 
     </div>
-
 
     <div class="hero-visual reveal">
 
@@ -168,16 +264,24 @@
 
     <div class="section-title reveal">
 
-        <span class="label">
+        <span
+            class="label"
+            data-i18n="services.label"
+        >
             NOS SERVICES
         </span>
 
         <h2>
-            Votre business.<br>
-            <span>Votre identité digitale.</span>
+            <span data-i18n="services.title1">
+                Votre business.
+            </span>
+            <br>
+            <span data-i18n="services.title2">
+                Votre identité digitale.
+            </span>
         </h2>
 
-        <p>
+        <p data-i18n="services.description">
             Une solution pensée pour donner à chaque activité
             une présentation moderne et professionnelle.
         </p>
@@ -193,9 +297,11 @@
                 <i class="fa-solid fa-id-card"></i>
             </div>
 
-            <h3>Carte NFC</h3>
+            <h3 data-i18n="services.card1">
+                Carte NFC
+            </h3>
 
-            <p>
+            <p data-i18n="services.card1p">
                 Une carte physique premium qui ouvre
                 votre profil digital en un simple tap.
             </p>
@@ -209,9 +315,11 @@
                 <i class="fa-solid fa-mobile-screen-button"></i>
             </div>
 
-            <h3>Profil digital</h3>
+            <h3 data-i18n="services.card2">
+                Profil digital
+            </h3>
 
-            <p>
+            <p data-i18n="services.card2p">
                 Une page personnalisée avec logo, photos,
                 services, réseaux et informations.
             </p>
@@ -225,9 +333,11 @@
                 <i class="fa-solid fa-address-book"></i>
             </div>
 
-            <h3>Enregistrer le contact</h3>
+            <h3 data-i18n="services.card3">
+                Enregistrer le contact
+            </h3>
 
-            <p>
+            <p data-i18n="services.card3p">
                 Le client peut sauvegarder directement
                 votre contact dans son téléphone.
             </p>
@@ -241,9 +351,11 @@
                 <i class="fa-solid fa-qrcode"></i>
             </div>
 
-            <h3>QR Code</h3>
+            <h3 data-i18n="services.card4">
+                QR Code
+            </h3>
 
-            <p>
+            <p data-i18n="services.card4p">
                 Votre profil reste accessible même lorsque
                 le client utilise le QR Code.
             </p>
@@ -257,9 +369,11 @@
                 <i class="fa-solid fa-share-nodes"></i>
             </div>
 
-            <h3>Réseaux sociaux</h3>
+            <h3 data-i18n="services.card5">
+                Réseaux sociaux
+            </h3>
 
-            <p>
+            <p data-i18n="services.card5p">
                 Instagram, WhatsApp, Facebook, TikTok
                 et tous vos liens réunis au même endroit.
             </p>
@@ -273,9 +387,11 @@
                 <i class="fa-solid fa-location-dot"></i>
             </div>
 
-            <h3>Localisation</h3>
+            <h3 data-i18n="services.card6">
+                Localisation
+            </h3>
 
-            <p>
+            <p data-i18n="services.card6p">
                 Google Maps, horaires et informations utiles
                 pour permettre au client de vous trouver.
             </p>
@@ -295,12 +411,17 @@
 
     <div class="section-title reveal">
 
-        <span class="label">
+        <span
+            class="label"
+            data-i18n="how.label"
+        >
             SIMPLE • RAPIDE • MODERNE
         </span>
 
         <h2>
-            Comment ça <span>marche ?</span>
+            <span data-i18n="how.title">
+                Comment ça marche ?
+            </span>
         </h2>
 
     </div>
@@ -316,9 +437,11 @@
                 <i class="fa-solid fa-hand-pointer"></i>
             </div>
 
-            <h3>Tap</h3>
+            <h3 data-i18n="how.step1">
+                Tap
+            </h3>
 
-            <p>
+            <p data-i18n="how.step1p">
                 Le client approche son smartphone
                 de votre carte NFC.
             </p>
@@ -337,9 +460,11 @@
                 <i class="fa-solid fa-globe"></i>
             </div>
 
-            <h3>Découvre</h3>
+            <h3 data-i18n="how.step2">
+                Découvre
+            </h3>
 
-            <p>
+            <p data-i18n="how.step2p">
                 Votre profil digital s'ouvre avec
                 votre identité et vos informations.
             </p>
@@ -358,9 +483,11 @@
                 <i class="fa-solid fa-address-book"></i>
             </div>
 
-            <h3>Enregistre</h3>
+            <h3 data-i18n="how.step3">
+                Enregistre
+            </h3>
 
-            <p>
+            <p data-i18n="how.step3p">
                 Le client peut sauvegarder votre contact
                 directement dans son téléphone.
             </p>
@@ -380,16 +507,24 @@
 
     <div class="section-title reveal">
 
-        <span class="label">
+        <span
+            class="label"
+            data-i18n="portfolio.label"
+        >
             PORTFOLIO
         </span>
 
         <h2>
-            Un design adapté<br>
-            <span>à chaque activité.</span>
+            <span data-i18n="portfolio.title1">
+                Un design adapté
+            </span>
+            <br>
+            <span data-i18n="portfolio.title2">
+                à chaque activité.
+            </span>
         </h2>
 
-        <p>
+        <p data-i18n="portfolio.description">
             Voici comment Next Tap peut présenter une même solution
             pour des métiers complètement différents.
         </p>
@@ -397,10 +532,7 @@
     </div>
 
 
-    <!-- =================================================
-         BANNER SEPARATE
-         IMPORTANT : il est HORS du portfolio-grid
-    ================================================== -->
+    <!-- FEATURED -->
 
     <article class="portfolio-featured reveal">
 
@@ -413,7 +545,10 @@
 
             <div class="portfolio-overlay"></div>
 
-            <span class="portfolio-tag">
+            <span
+                class="portfolio-tag"
+                data-i18n="portfolio.tag"
+            >
                 BRAND • NFC • DIGITAL
             </span>
 
@@ -424,9 +559,11 @@
 
             <div>
 
-                <h3>Next Tap</h3>
+                <h3 data-i18n="portfolio.nexttap">
+                    Next Tap
+                </h3>
 
-                <p>
+                <p data-i18n="portfolio.nexttapdesc">
                     Carte NFC • Profil digital • QR Code • Social Links
                 </p>
 
@@ -441,10 +578,7 @@
     </article>
 
 
-    <!-- =================================================
-         BUSINESS CARDS
-         هنا جميع les cards تحت الـ banner
-    ================================================== -->
+    <!-- PORTFOLIO GRID -->
 
     <div class="portfolio-grid">
 
@@ -459,11 +593,15 @@
                     <i class="fa-solid fa-utensils"></i>
                 </div>
 
-                <small>EXEMPLE</small>
+                <small data-i18n="portfolio.example">
+                    EXEMPLE
+                </small>
 
-                <h3>Restaurant</h3>
+                <h3 data-i18n="portfolio.restaurant">
+                    Restaurant
+                </h3>
 
-                <p>
+                <p data-i18n="portfolio.restaurantCover">
                     Menu • Réservation • WhatsApp
                 </p>
 
@@ -474,9 +612,11 @@
 
                 <div>
 
-                    <h3>Restaurant</h3>
+                    <h3 data-i18n="portfolio.restaurant">
+                        Restaurant
+                    </h3>
 
-                    <p>
+                    <p data-i18n="portfolio.restaurantp">
                         Menu digital & réservation
                     </p>
 
@@ -501,11 +641,15 @@
                     <i class="fa-solid fa-car"></i>
                 </div>
 
-                <small>EXEMPLE</small>
+                <small data-i18n="portfolio.example">
+                    EXEMPLE
+                </small>
 
-                <h3>Car Rental</h3>
+                <h3 data-i18n="portfolio.rental">
+                    Car Rental
+                </h3>
 
-                <p>
+                <p data-i18n="portfolio.rentalCover">
                     Catalogue • Contact • Localisation
                 </p>
 
@@ -516,9 +660,11 @@
 
                 <div>
 
-                    <h3>Location de voitures</h3>
+                    <h3 data-i18n="portfolio.rental">
+                        Location de voitures
+                    </h3>
 
-                    <p>
+                    <p data-i18n="portfolio.rentalp">
                         Catalogue & réservation
                     </p>
 
@@ -543,11 +689,15 @@
                     <i class="fa-solid fa-building"></i>
                 </div>
 
-                <small>EXEMPLE</small>
+                <small data-i18n="portfolio.example">
+                    EXEMPLE
+                </small>
 
-                <h3>Construction</h3>
+                <h3 data-i18n="portfolio.construction">
+                    Construction
+                </h3>
 
-                <p>
+                <p data-i18n="portfolio.constructionCover">
                     Entreprise • Services • Contact
                 </p>
 
@@ -558,9 +708,11 @@
 
                 <div>
 
-                    <h3>Entreprise / Construction</h3>
+                    <h3 data-i18n="portfolio.construction">
+                        Entreprise / Construction
+                    </h3>
 
-                    <p>
+                    <p data-i18n="portfolio.constructionp">
                         Présentation professionnelle
                     </p>
 
@@ -585,11 +737,15 @@
                     <i class="fa-solid fa-laptop-code"></i>
                 </div>
 
-                <small>EXEMPLE</small>
+                <small data-i18n="portfolio.example">
+                    EXEMPLE
+                </small>
 
-                <h3>Freelancer</h3>
+                <h3 data-i18n="portfolio.freelancer">
+                    Freelancer
+                </h3>
 
-                <p>
+                <p data-i18n="portfolio.freelancerCover">
                     Portfolio • Services • Contact
                 </p>
 
@@ -600,9 +756,11 @@
 
                 <div>
 
-                    <h3>Freelancer</h3>
+                    <h3 data-i18n="portfolio.freelancer">
+                        Freelancer
+                    </h3>
 
-                    <p>
+                    <p data-i18n="portfolio.freelancerp">
                         Portfolio & liens
                     </p>
 
@@ -627,11 +785,15 @@
                     <i class="fa-solid fa-mug-hot"></i>
                 </div>
 
-                <small>EXEMPLE</small>
+                <small data-i18n="portfolio.example">
+                    EXEMPLE
+                </small>
 
-                <h3>Café</h3>
+                <h3 data-i18n="portfolio.cafe">
+                    Café
+                </h3>
 
-                <p>
+                <p data-i18n="portfolio.cafeCover">
                     Menu • Instagram • Maps
                 </p>
 
@@ -642,9 +804,11 @@
 
                 <div>
 
-                    <h3>Café</h3>
+                    <h3 data-i18n="portfolio.cafe">
+                        Café
+                    </h3>
 
-                    <p>
+                    <p data-i18n="portfolio.cafep">
                         Menu & présence digitale
                     </p>
 
@@ -669,11 +833,15 @@
                     <i class="fa-solid fa-scissors"></i>
                 </div>
 
-                <small>EXEMPLE</small>
+                <small data-i18n="portfolio.example">
+                    EXEMPLE
+                </small>
 
-                <h3>Barber</h3>
+                <h3 data-i18n="portfolio.barber">
+                    Barber
+                </h3>
 
-                <p>
+                <p data-i18n="portfolio.barberCover">
                     Services • Réservation • WhatsApp
                 </p>
 
@@ -684,9 +852,11 @@
 
                 <div>
 
-                    <h3>Barber</h3>
+                    <h3 data-i18n="portfolio.barber">
+                        Barber
+                    </h3>
 
-                    <p>
+                    <p data-i18n="portfolio.barberp">
                         Services & réservation
                     </p>
 
@@ -713,16 +883,24 @@
 
     <div class="why-text reveal">
 
-        <span class="label">
+        <span
+            class="label"
+            data-i18n="why.label"
+        >
             POURQUOI NEXT TAP ?
         </span>
 
         <h2>
-            Une carte physique.<br>
-            <span>Un univers digital.</span>
+            <span data-i18n="why.title1">
+                Une carte physique.
+            </span>
+            <br>
+            <span data-i18n="why.title2">
+                Un univers digital.
+            </span>
         </h2>
 
-        <p>
+        <p data-i18n="why.description">
             Le client ne reçoit pas uniquement votre numéro.
             Il découvre votre marque, vos services, vos photos,
             vos réseaux, votre localisation et peut enregistrer
@@ -734,32 +912,44 @@
 
             <div>
                 <i class="fa-solid fa-check"></i>
-                Sans application
+                <span data-i18n="why.benefit1">
+                    Sans application
+                </span>
             </div>
 
             <div>
                 <i class="fa-solid fa-check"></i>
-                NFC + QR Code
+                <span data-i18n="why.benefit2">
+                    NFC + QR Code
+                </span>
             </div>
 
             <div>
                 <i class="fa-solid fa-check"></i>
-                Design personnalisé
+                <span data-i18n="why.benefit3">
+                    Design personnalisé
+                </span>
             </div>
 
             <div>
                 <i class="fa-solid fa-check"></i>
-                Contact sauvegardable
+                <span data-i18n="why.benefit4">
+                    Contact sauvegardable
+                </span>
             </div>
 
             <div>
                 <i class="fa-solid fa-check"></i>
-                WhatsApp & réseaux
+                <span data-i18n="why.benefit5">
+                    WhatsApp & réseaux
+                </span>
             </div>
 
             <div>
                 <i class="fa-solid fa-check"></i>
-                Adapté à chaque activité
+                <span data-i18n="why.benefit6">
+                    Adapté à chaque activité
+                </span>
             </div>
 
         </div>
@@ -781,33 +971,41 @@
                     class="phone-logo"
                 >
 
-                <h4>
+                <h4 data-i18n="why.phoneTitle">
                     Votre Business
                 </h4>
 
-                <p>
+                <p data-i18n="why.phoneDescription">
                     Votre présence digitale au même endroit.
                 </p>
 
 
                 <button>
                     <i class="fa-brands fa-whatsapp"></i>
-                    WhatsApp
+                    <span data-i18n="why.whatsapp">
+                        WhatsApp
+                    </span>
                 </button>
 
                 <button>
                     <i class="fa-brands fa-instagram"></i>
-                    Instagram
+                    <span data-i18n="why.instagram">
+                        Instagram
+                    </span>
                 </button>
 
                 <button id="saveContactBtn">
                     <i class="fa-solid fa-address-book"></i>
-                    Enregistrer le contact
+                    <span data-i18n="why.save">
+                        Enregistrer le contact
+                    </span>
                 </button>
 
                 <button>
                     <i class="fa-solid fa-location-dot"></i>
-                    Localisation
+                    <span data-i18n="why.location">
+                        Localisation
+                    </span>
                 </button>
 
             </div>
@@ -833,16 +1031,24 @@
             class="cta-logo"
         >
 
-        <span class="label">
+        <span
+            class="label"
+            data-i18n="cta.label"
+        >
             NEXT TAP • DIGITAL SOLUTIONS
         </span>
 
         <h2>
-            Votre business mérite<br>
-            <span>une présence digitale forte.</span>
+            <span data-i18n="cta.title1">
+                Votre business mérite
+            </span>
+            <br>
+            <span data-i18n="cta.title2">
+                une présence digitale forte.
+            </span>
         </h2>
 
-        <p>
+        <p data-i18n="cta.description">
             Créons une carte NFC et un profil digital
             adaptés à votre activité.
         </p>
@@ -857,14 +1063,18 @@
                 rel="noopener"
             >
                 <i class="fa-brands fa-whatsapp"></i>
-                Commander sur WhatsApp
+                <span data-i18n="cta.whatsapp">
+                    Commander sur WhatsApp
+                </span>
             </a>
 
             <a
                 class="btn btn-outline"
                 href="#home"
             >
-                Retour en haut
+                <span data-i18n="cta.top">
+                    Retour en haut
+                </span>
             </a>
 
         </div>
@@ -888,7 +1098,7 @@
         class="footer-logo"
     >
 
-    <p>
+    <p data-i18n="footer.text">
         Digital Presence • One Tap Away.
     </p>
 
@@ -899,6 +1109,7 @@
             href="https://www.instagram.com/_nex_tap_?igsi=MXdjeHR1bjU1bzk4Nw%3D%3D&utm_source=qr"
             target="_blank"
             rel="noopener"
+            aria-label="Instagram"
         >
             <i class="fa-brands fa-instagram"></i>
         </a>
@@ -908,6 +1119,7 @@
             href="https://wa.me/212717354208"
             target="_blank"
             rel="noopener"
+            aria-label="WhatsApp"
         >
             <i class="fa-brands fa-whatsapp"></i>
         </a>
@@ -915,7 +1127,7 @@
     </div>
 
 
-    <small>
+    <small data-i18n="footer.copyright">
         © 2026 Next Tap. Tous droits réservés.
     </small>
 

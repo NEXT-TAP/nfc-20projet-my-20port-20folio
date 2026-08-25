@@ -1,5 +1,5 @@
 /* =====================================================
-   NEXT TAP
+   NEXT TAP — STYLE.CSS
 ===================================================== */
 
 :root {
@@ -21,7 +21,6 @@
     --radius: 22px;
 }
 
-
 /* =====================================================
    RESET
 ===================================================== */
@@ -34,6 +33,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
@@ -54,8 +54,13 @@ img {
     display: block;
 }
 
+button {
+    font-family: inherit;
+}
 
-/* Background glow */
+/* =====================================================
+   BACKGROUND
+===================================================== */
 
 body::before {
     content: "";
@@ -80,7 +85,6 @@ body::before {
     z-index: -1;
 }
 
-
 /* =====================================================
    HEADER
 ===================================================== */
@@ -98,9 +102,10 @@ body::before {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
     z-index: 1000;
+
+    gap: 20px;
 
     border-bottom: 1px solid transparent;
 
@@ -111,9 +116,14 @@ body::before {
     background: rgba(5,5,7,.86);
 
     backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
     border-color: var(--border);
 }
+
+/* =====================================================
+   LOGO
+===================================================== */
 
 .brand-logo {
     width: 145px;
@@ -121,6 +131,8 @@ body::before {
 
     display: flex;
     align-items: center;
+
+    flex: 0 0 auto;
 }
 
 .brand-logo img {
@@ -131,12 +143,19 @@ body::before {
     object-position: left center;
 }
 
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
 .nav {
     display: flex;
 
+    align-items: center;
+    justify-content: center;
+
     gap: 30px;
 
-    align-items: center;
+    margin-left: auto;
 }
 
 .nav a {
@@ -150,6 +169,24 @@ body::before {
 .nav a:hover {
     color: #fff;
 }
+
+/* =====================================================
+   HEADER RIGHT
+===================================================== */
+
+.header-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    flex: 0 0 auto;
+}
+
+/* =====================================================
+   WHATSAPP HEADER BUTTON
+===================================================== */
 
 .header-btn {
     padding: 11px 16px;
@@ -165,13 +202,244 @@ body::before {
             var(--purple2)
         );
 
+    color: #fff;
+
     font-size: 12px;
     font-weight: 800;
 
     box-shadow:
         0 0 25px rgba(139,44,255,.18);
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    flex: 0 0 auto;
+
+    transition: .25s;
 }
 
+.header-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(139,44,255,.30);
+}
+
+/* =====================================================
+   LANGUAGE SWITCHER
+===================================================== */
+
+.language-switcher {
+    position: relative;
+
+    z-index: 1100;
+
+    flex: 0 0 auto;
+}
+
+.language-toggle {
+    height: 38px;
+    min-width: 42px;
+
+    padding: 0 10px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    color: #f7f7fa;
+
+    background: rgba(139,44,255,.07);
+
+    border: 1px solid rgba(139,44,255,.28);
+
+    border-radius: 11px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: .25s;
+}
+
+.language-toggle:hover,
+.language-switcher.open .language-toggle {
+    border-color: rgba(193,60,255,.65);
+
+    background: rgba(139,44,255,.13);
+
+    box-shadow:
+        0 0 22px rgba(139,44,255,.12);
+}
+
+.language-toggle i:first-child {
+    color: #c13cff;
+    font-size: 14px;
+}
+
+.language-current {
+    font-size: 10px;
+    letter-spacing: .7px;
+}
+
+.language-chevron {
+    color: #aaa4b3;
+    font-size: 9px;
+
+    transition: .25s;
+}
+
+.language-switcher.open .language-chevron {
+    transform: rotate(180deg);
+}
+
+/* =====================================================
+   LANGUAGE MENU
+===================================================== */
+
+.language-menu {
+    position: absolute;
+
+    top: calc(100% + 9px);
+    right: 0;
+
+    width: 150px;
+
+    padding: 6px;
+
+    background: rgba(15,13,21,.97);
+
+    border: 1px solid rgba(255,255,255,.10);
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.45),
+        0 0 30px rgba(139,44,255,.08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform:
+        translateY(-7px)
+        scale(.98);
+
+    transition: .22s ease;
+}
+
+.language-switcher.open .language-menu {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.language-option {
+    width: 100%;
+
+    padding: 9px 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    color: #bdb9c5;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-align: left;
+
+    transition: .2s;
+}
+
+.language-option:hover,
+.language-option.active {
+    color: #fff;
+
+    background: rgba(139,44,255,.11);
+}
+
+.language-option .flag {
+    font-size: 15px;
+}
+
+.language-option .lang-name {
+    flex: 1;
+}
+
+.language-option .check {
+    color: #c13cff;
+
+    font-size: 10px;
+
+    opacity: 0;
+}
+
+.language-option.active .check {
+    opacity: 1;
+}
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
+.mobile-menu-btn {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(139,44,255,.28);
+
+    border-radius: 11px;
+
+    background: rgba(139,44,255,.07);
+
+    color: #fff;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: .25s;
+}
+
+.mobile-menu-btn:hover {
+    border-color: rgba(193,60,255,.65);
+
+    background: rgba(139,44,255,.13);
+}
 
 /* =====================================================
    HERO
@@ -184,11 +452,13 @@ body::before {
 
     margin: auto;
 
-    padding: 145px 25px 80px;
+    padding:
+        145px 25px 80px;
 
     display: grid;
 
-    grid-template-columns: .92fr 1.08fr;
+    grid-template-columns:
+        .92fr 1.08fr;
 
     align-items: center;
 
@@ -216,9 +486,11 @@ body::before {
     margin-bottom: 22px;
 }
 
-.eyebrow span {
+.eyebrow span:first-child {
     width: 7px;
     height: 7px;
+
+    flex: 0 0 auto;
 
     border-radius: 50%;
 
@@ -229,7 +501,8 @@ body::before {
 }
 
 .hero h1 {
-    font-size: clamp(48px,6vw,78px);
+    font-size:
+        clamp(48px,6vw,78px);
 
     line-height: .98;
 
@@ -247,6 +520,7 @@ body::before {
         );
 
     -webkit-background-clip: text;
+    background-clip: text;
 
     color: transparent;
 }
@@ -341,7 +615,7 @@ body::before {
     font-size: 10px;
 }
 
-.hero-features span {
+.hero-features > span {
     display: flex;
 
     gap: 6px;
@@ -359,7 +633,6 @@ body::before {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 }
 
@@ -374,6 +647,8 @@ body::before {
     filter: blur(130px);
 
     opacity: .16;
+
+    pointer-events: none;
 }
 
 .hero-banner {
@@ -385,13 +660,13 @@ body::before {
 
     border-radius: 22px;
 
-    border: 1px solid rgba(255,255,255,.10);
+    border:
+        1px solid rgba(255,255,255,.10);
 
     box-shadow:
         0 35px 100px rgba(0,0,0,.55),
         0 0 60px rgba(139,44,255,.12);
 }
-
 
 /* =====================================================
    GENERAL SECTIONS
@@ -414,7 +689,8 @@ body::before {
 .section-title h2,
 .why-text h2,
 .cta h2 {
-    font-size: clamp(36px,5vw,56px);
+    font-size:
+        clamp(36px,5vw,56px);
 
     line-height: 1.05;
 
@@ -438,7 +714,6 @@ body::before {
 
     line-height: 1.8;
 }
-
 
 /* =====================================================
    SERVICES
@@ -540,7 +815,6 @@ body::before {
     line-height: 1.75;
 }
 
-
 /* =====================================================
    HOW
 ===================================================== */
@@ -621,21 +895,9 @@ body::before {
         );
 }
 
-
 /* =====================================================
    PORTFOLIO
 ===================================================== */
-
-/*
-   IMPORTANT
-
-   Banner بوحدو فوق.
-   Business grid بوحدو تحت.
-
-   ما بقيناش نديرو featured داخل
-   نفس grid ديال cards.
-*/
-
 
 .portfolio-featured {
     width: 100%;
@@ -663,7 +925,6 @@ body::before {
         0 25px 60px rgba(0,0,0,.28);
 }
 
-
 .portfolio-banner {
     position: relative;
 
@@ -681,7 +942,6 @@ body::before {
     height: 100%;
 
     object-fit: cover;
-
     object-position: center;
 
     transition: .6s;
@@ -730,9 +990,8 @@ body::before {
     border-radius: 8px;
 }
 
-
 /* =====================================================
-   BUSINESS GRID
+   PORTFOLIO GRID
 ===================================================== */
 
 .portfolio-grid {
@@ -747,11 +1006,6 @@ body::before {
 
     align-items: stretch;
 }
-
-
-/* =====================================================
-   BUSINESS CARD
-===================================================== */
 
 .portfolio-card {
     min-width: 0;
@@ -777,9 +1031,8 @@ body::before {
         0 25px 60px rgba(0,0,0,.28);
 }
 
-
 /* =====================================================
-   DEMO COVER
+   DEMO COVERS
 ===================================================== */
 
 .demo-cover {
@@ -790,7 +1043,6 @@ body::before {
     flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
@@ -868,8 +1120,9 @@ body::before {
     color: #a9a5b2;
 }
 
-
-/* Different business backgrounds */
+/* =====================================================
+   BUSINESS BACKGROUNDS
+===================================================== */
 
 .restaurant {
     background:
@@ -925,7 +1178,6 @@ body::before {
         );
 }
 
-
 /* =====================================================
    PORTFOLIO INFO
 ===================================================== */
@@ -975,7 +1227,6 @@ body::before {
     flex: none;
 }
 
-
 /* =====================================================
    WHY
 ===================================================== */
@@ -989,7 +1240,8 @@ body::before {
 
     display: grid;
 
-    grid-template-columns: 1fr .8fr;
+    grid-template-columns:
+        1fr .8fr;
 
     gap: 80px;
 
@@ -1006,7 +1258,8 @@ body::before {
 .benefits {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     gap: 15px;
 
@@ -1026,7 +1279,6 @@ body::before {
 .benefits i {
     color: #c13cff;
 }
-
 
 /* =====================================================
    PHONE
@@ -1114,6 +1366,8 @@ body::before {
     font-size: 9px;
 
     cursor: pointer;
+
+    transition: .25s;
 }
 
 .phone-screen button:hover {
@@ -1122,7 +1376,6 @@ body::before {
 
     color: #d45bff;
 }
-
 
 /* =====================================================
    CTA
@@ -1171,7 +1424,6 @@ body::before {
 .cta p {
     margin-bottom: 30px;
 }
-
 
 /* =====================================================
    FOOTER
@@ -1244,7 +1496,6 @@ footer p {
     color: #555;
 }
 
-
 /* =====================================================
    REVEAL
 ===================================================== */
@@ -1265,6 +1516,44 @@ footer p {
     transform: translateY(0);
 }
 
+/* =====================================================
+   RTL
+===================================================== */
+
+html[dir="rtl"] body {
+    text-align: right;
+}
+
+html[dir="rtl"] .brand-logo img {
+    object-position: right center;
+}
+
+html[dir="rtl"] .language-menu {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .language-option {
+    text-align: right;
+}
+
+html[dir="rtl"] .language-toggle {
+    direction: ltr;
+}
+
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .section-title,
+html[dir="rtl"] .why-text {
+    text-align: right;
+}
+
+html[dir="rtl"] .hero-actions {
+    justify-content: flex-start;
+}
+
+html[dir="rtl"] .hero-features {
+    justify-content: flex-start;
+}
 
 /* =====================================================
    TABLET
@@ -1272,8 +1561,89 @@ footer p {
 
 @media (max-width: 950px) {
 
+    .header {
+        height: 68px;
+
+        padding: 0 18px;
+    }
+
+    .brand-logo {
+        width: 125px;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
     .nav {
-        display: none;
+        position: absolute;
+
+        top: calc(100% + 10px);
+
+        left: 17px;
+        right: 17px;
+
+        margin: 0;
+
+        padding: 10px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 4px;
+
+        background:
+            rgba(15,13,21,.97);
+
+        border:
+            1px solid rgba(255,255,255,.10);
+
+        border-radius: 16px;
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,.45),
+            0 0 30px rgba(139,44,255,.08);
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition: .25s ease;
+    }
+
+    .nav.mobile-open {
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform: translateY(0);
+    }
+
+    .nav a {
+        width: 100%;
+
+        padding: 13px 14px;
+
+        border-radius: 10px;
+
+        font-size: 12px;
+    }
+
+    .nav a:hover {
+        background:
+            rgba(139,44,255,.10);
     }
 
     .hero {
@@ -1300,7 +1670,8 @@ footer p {
 
     .service-grid,
     .portfolio-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
     }
 
     .portfolio-banner {
@@ -1320,7 +1691,6 @@ footer p {
     }
 }
 
-
 /* =====================================================
    MOBILE
 ===================================================== */
@@ -1328,19 +1698,52 @@ footer p {
 @media (max-width: 600px) {
 
     .header {
-        height: 68px;
+        padding: 0 14px;
 
-        padding:
-            0 17px;
+        gap: 7px;
     }
 
     .brand-logo {
-        width: 125px;
+        width: 115px;
+    }
+
+    .header-right {
+        gap: 5px;
     }
 
     .header-btn {
-        padding:
-            9px 12px;
+        padding: 9px 10px;
+    }
+
+    .header-btn span {
+        display: none;
+    }
+
+    .language-toggle {
+        height: 37px;
+
+        min-width: 39px;
+
+        padding: 0 9px;
+
+        border-radius: 10px;
+    }
+
+    .language-current {
+        font-size: 9px;
+    }
+
+    .language-chevron {
+        display: none;
+    }
+
+    .language-menu {
+        width: 145px;
+    }
+
+    .mobile-menu-btn {
+        width: 37px;
+        height: 37px;
     }
 
     .hero {
@@ -1418,4 +1821,34 @@ footer p {
             15px;
     }
 
+    html[dir="rtl"] .hero-actions {
+        justify-content: center;
+    }
+
+    html[dir="rtl"] .hero-features {
+        justify-content: center;
+    }
+}
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .brand-logo {
+        width: 100px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .header-btn {
+        min-width: 38px;
+    }
 }
