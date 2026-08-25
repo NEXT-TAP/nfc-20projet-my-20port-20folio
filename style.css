@@ -3152,4 +3152,78 @@ html[dir="rtl"] .nav.mobile-open a {
         flex-basis: 37px;
     }
 
+} /* =========================================================
+   FINAL RTL HEADER FIX
+   Logo ALWAYS LEFT
+   Language + Menu ALWAYS RIGHT
+========================================================= */
+
+/* Header position must NOT change with Arabic RTL */
+.header {
+    direction: ltr !important;
+}
+
+/* Logo stays on the LEFT */
+.brand-logo {
+    direction: ltr !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.brand-logo img {
+    direction: ltr !important;
+    object-position: left center !important;
+}
+
+/* Language + Menu ALWAYS stay on the RIGHT */
+.header-right {
+    direction: ltr !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+/* Language button itself stays normal */
+.language-switcher,
+.language-toggle {
+    direction: ltr !important;
+}
+
+/* Arabic text can still be RTL */
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .section-title,
+html[dir="rtl"] .why-text,
+html[dir="rtl"] .cta,
+html[dir="rtl"] .service-card,
+html[dir="rtl"] footer {
+    direction: rtl;
+}
+
+/* Mobile header */
+@media (max-width: 950px) {
+
+    .header {
+        display: flex !important;
+        flex-direction: row !important;
+        direction: ltr !important;
+    }
+
+    .brand-logo {
+        order: 1 !important;
+    }
+
+    .header-right {
+        order: 2 !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        direction: ltr !important;
+    }
+
+    .language-switcher {
+        order: 1 !important;
+    }
+
+    .mobile-menu-btn {
+        order: 2 !important;
+    }
+
 }
