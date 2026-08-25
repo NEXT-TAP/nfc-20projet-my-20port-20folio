@@ -1852,3 +1852,898 @@ html[dir="rtl"] .hero-features {
         min-width: 38px;
     }
 }
+
+/* =========================================================
+   NEXT TAP — RESPONSIVE HEADER / MOBILE FIX
+   Override added to fix the header on phones and small screens.
+   ========================================================= */
+
+/* Prevent any child from forcing the page wider than the viewport */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Desktop: give the header a cleaner, more balanced layout */
+@media (min-width: 951px) {
+    .header {
+        padding-left: clamp(24px, 4vw, 60px);
+        padding-right: clamp(24px, 4vw, 60px);
+        gap: 24px;
+    }
+
+    .brand-logo {
+        width: 150px;
+        height: 54px;
+    }
+
+    .nav {
+        gap: clamp(18px, 2.2vw, 32px);
+        flex: 1 1 auto;
+        margin-left: 20px;
+        margin-right: 10px;
+    }
+
+    .nav a {
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+
+    .language-toggle {
+        min-width: 58px;
+        height: 42px;
+        padding: 0 12px;
+    }
+
+    .header-btn {
+        min-height: 42px;
+        padding: 11px 16px;
+        white-space: nowrap;
+    }
+}
+
+/* Tablet / mobile header */
+@media (max-width: 950px) {
+    .header {
+        height: 70px;
+        padding: 0 16px;
+        gap: 0;
+    }
+
+    .brand-logo {
+        width: 128px;
+        height: 48px;
+        flex: 0 1 auto;
+        min-width: 0;
+    }
+
+    .brand-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: left center;
+    }
+
+    .header-right {
+        margin-left: auto;
+        gap: 7px;
+        flex: 0 0 auto;
+    }
+
+    .language-toggle,
+    .header-btn,
+    .mobile-menu-btn {
+        flex-shrink: 0;
+    }
+
+    .mobile-menu-btn {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        font-size: 18px;
+    }
+
+    .header-btn {
+        min-width: 42px;
+        min-height: 42px;
+        padding: 0 12px;
+    }
+
+    .nav {
+        left: 12px;
+        right: 12px;
+        width: auto;
+    }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+    .header {
+        height: 64px;
+        padding: 0 10px;
+    }
+
+    /* IMPORTANT:
+       The logo image may contain transparent empty space.
+       Keeping a controlled box prevents it from visually pushing
+       the language / WhatsApp / menu controls away. */
+    .brand-logo {
+        width: 108px;
+        height: 44px;
+        flex: 0 0 108px;
+    }
+
+    .header-right {
+        margin-left: auto;
+        gap: 6px;
+    }
+
+    .language-toggle {
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        padding: 0;
+        gap: 0;
+    }
+
+    .language-current {
+        display: inline-block;
+        font-size: 9px;
+    }
+
+    .language-toggle .fa-globe {
+        font-size: 14px;
+    }
+
+    .header-btn {
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        min-height: 40px;
+        padding: 0;
+        border-radius: 11px;
+    }
+
+    .header-btn i {
+        font-size: 17px;
+    }
+
+    .mobile-menu-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 11px;
+        font-size: 18px;
+    }
+
+    /* Mobile dropdown stays fully inside the viewport */
+    .nav {
+        top: calc(100% + 8px);
+        left: 10px;
+        right: 10px;
+        width: auto;
+        max-width: calc(100vw - 20px);
+    }
+
+    /* Hero must never create horizontal overflow */
+    .hero {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding:
+            105px 16px 55px;
+        gap: 30px;
+    }
+
+    .hero-content,
+    .hero-visual {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+        font-size: clamp(38px, 11vw, 48px);
+        line-height: .98;
+        letter-spacing: -2.4px;
+        overflow-wrap: anywhere;
+    }
+
+    .hero-content > p {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .hero-actions {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .hero-actions .btn {
+        min-width: 0;
+        flex: 1 1 0;
+        padding: 13px 12px;
+        font-size: 11px;
+    }
+
+    .hero-features {
+        width: 100%;
+        gap: 10px 14px;
+        justify-content: center;
+    }
+
+    .hero-features > span {
+        white-space: nowrap;
+    }
+
+    .hero-visual {
+        margin-top: 4px;
+    }
+
+    .hero-banner {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .purple-glow {
+        width: 80vw;
+        max-width: 420px;
+        height: 260px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .header {
+        padding: 0 8px;
+    }
+
+    .brand-logo {
+        width: 96px;
+        height: 40px;
+        flex-basis: 96px;
+    }
+
+    .header-right {
+        gap: 4px;
+    }
+
+    .language-toggle,
+    .header-btn,
+    .mobile-menu-btn {
+        width: 36px;
+        min-width: 36px;
+        height: 36px;
+        min-height: 36px;
+    }
+
+    .header-btn i,
+    .mobile-menu-btn {
+        font-size: 16px;
+    }
+
+    .hero {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        letter-spacing: -2px;
+    }
+
+    .hero-actions .btn {
+        flex-basis: 100%;
+        width: 100%;
+    }
+}
+/* =========================================================
+   NEXT TAP — FINAL MOBILE HEADER FIX
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+html,
+body {
+
+    max-width: 100%;
+
+    overflow-x: hidden;
+
+}
+
+
+body.menu-open {
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+
+    width: 100%;
+
+    min-width: 0;
+
+}
+
+
+.header-right {
+
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    flex: 0 0 auto;
+
+}
+
+
+/*
+IMPORTANT:
+
+If an old HTML version still contains
+the WhatsApp button inside the header,
+hide it automatically.
+*/
+
+.header > .header-right > .header-btn {
+
+    display: none !important;
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 951px) {
+
+    .header {
+
+        padding-left:
+            clamp(24px, 5vw, 70px);
+
+        padding-right:
+            clamp(24px, 5vw, 70px);
+
+    }
+
+
+    .brand-logo {
+
+        width: 145px;
+
+        flex: 0 0 145px;
+
+    }
+
+
+    .nav {
+
+        flex: 1 1 auto;
+
+        justify-content: center;
+
+        margin-left: 20px;
+
+        margin-right: 10px;
+
+    }
+
+
+    .mobile-menu-btn {
+
+        display: none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET + MOBILE
+========================================================= */
+
+@media (max-width: 950px) {
+
+
+    /* HEADER */
+
+    .header {
+
+        height: 68px;
+
+        padding: 0 16px;
+
+        gap: 0;
+
+    }
+
+
+    /* LOGO */
+
+    .brand-logo {
+
+        width: 118px;
+
+        height: 48px;
+
+        flex: 0 0 118px;
+
+    }
+
+
+    .brand-logo img {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: contain;
+
+        object-position: left center;
+
+    }
+
+
+    /* RIGHT */
+
+    .header-right {
+
+        margin-left: auto;
+
+        gap: 7px;
+
+    }
+
+
+    /* =====================================================
+       LANGUAGE
+    ===================================================== */
+
+    .language-switcher {
+
+        display: block !important;
+
+        flex: 0 0 auto;
+
+    }
+
+
+    .language-toggle {
+
+        width: 42px;
+
+        min-width: 42px;
+
+        height: 42px;
+
+        padding: 0;
+
+        gap: 0;
+
+    }
+
+
+    .language-current {
+
+        font-size: 9px;
+
+    }
+
+
+    .language-chevron {
+
+        display: none;
+
+    }
+
+
+    /* =====================================================
+       MENU BUTTON
+    ===================================================== */
+
+    .mobile-menu-btn {
+
+        display: flex !important;
+
+        width: 42px;
+
+        height: 42px;
+
+        flex: 0 0 42px;
+
+        border-radius: 12px;
+
+        position: relative;
+
+        z-index: 1300;
+
+    }
+
+
+    .mobile-menu-btn.is-open {
+
+        background:
+            rgba(139,44,255,.14);
+
+        border-color:
+            rgba(193,60,255,.65);
+
+        box-shadow:
+            0 0 25px
+            rgba(139,44,255,.15);
+
+    }
+
+
+    /* =====================================================
+       MOBILE NAVIGATION
+       
+       HIDDEN BY DEFAULT
+       
+       OPENS ONLY AFTER CLICKING MENU
+    ===================================================== */
+
+    .nav,
+    .nav.mobile-open {
+
+        position: fixed;
+
+        inset: 0;
+
+        width: 100vw;
+
+        max-width: 100vw;
+
+        height: 100dvh;
+
+        margin: 0;
+
+        padding:
+            110px 30px 60px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 18px;
+
+
+        background:
+
+            radial-gradient(
+                circle at 50% 35%,
+                rgba(139,44,255,.14),
+                transparent 38%
+            ),
+
+            rgba(5,5,7,.97);
+
+
+        border: 0;
+
+        border-radius: 0;
+
+        box-shadow: none;
+
+
+        backdrop-filter:
+            blur(22px);
+
+        -webkit-backdrop-filter:
+            blur(22px);
+
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+
+        transform:
+            translateY(-12px);
+
+
+        transition:
+
+            opacity .25s ease,
+
+            transform .25s ease,
+
+            visibility .25s ease;
+
+
+        z-index: 1200;
+
+    }
+
+
+    /* OPEN */
+
+    .nav.mobile-open {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform:
+            translateY(0);
+
+    }
+
+
+    /* =====================================================
+       NAV LINKS
+    ===================================================== */
+
+    .nav a,
+    .nav.mobile-open a {
+
+        width: auto;
+
+        min-width: 190px;
+
+        padding:
+            14px 24px;
+
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+
+        border:
+            1px solid transparent;
+
+        border-radius: 14px;
+
+
+        color: #f7f7fa;
+
+        font-size: 18px;
+
+        font-weight: 700;
+
+        text-align: center;
+
+
+        background: transparent;
+
+
+        transition:
+            .25s ease;
+
+    }
+
+
+    .nav a:hover,
+    .nav a:focus-visible {
+
+        color: #fff;
+
+        border-color:
+            rgba(193,60,255,.35);
+
+        background:
+            rgba(139,44,255,.10);
+
+        transform:
+            translateY(-2px);
+
+    }
+
+
+    /*
+    Keep menu button above menu
+    */
+
+    .mobile-menu-btn {
+
+        z-index: 1300;
+
+    }
+
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+@media (max-width: 600px) {
+
+
+    .header {
+
+        height: 64px;
+
+        padding: 0 10px;
+
+    }
+
+
+    /* LOGO */
+
+    .brand-logo {
+
+        width: 104px;
+
+        height: 43px;
+
+        flex-basis: 104px;
+
+    }
+
+
+    /* RIGHT */
+
+    .header-right {
+
+        gap: 6px;
+
+    }
+
+
+    /* LANGUAGE + MENU */
+
+    .language-toggle,
+    .mobile-menu-btn {
+
+        width: 40px;
+
+        min-width: 40px;
+
+        height: 40px;
+
+        min-height: 40px;
+
+    }
+
+
+    .language-toggle {
+
+        border-radius: 11px;
+
+    }
+
+
+    .mobile-menu-btn {
+
+        border-radius: 11px;
+
+        font-size: 18px;
+
+    }
+
+
+    /* MOBILE MENU */
+
+    .nav,
+    .nav.mobile-open {
+
+        padding:
+            90px 18px
+            max(
+                30px,
+                env(safe-area-inset-bottom)
+            );
+
+    }
+
+
+    .nav a,
+    .nav.mobile-open a {
+
+        min-width:
+            min(250px, 82vw);
+
+        padding:
+            13px 20px;
+
+        font-size: 17px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+
+    .header {
+
+        padding: 0 8px;
+
+    }
+
+
+    .brand-logo {
+
+        width: 92px;
+
+        height: 40px;
+
+        flex-basis: 92px;
+
+    }
+
+
+    .header-right {
+
+        gap: 5px;
+
+    }
+
+
+    .language-toggle,
+    .mobile-menu-btn {
+
+        width: 37px;
+
+        min-width: 37px;
+
+        height: 37px;
+
+        min-height: 37px;
+
+    }
+
+
+    .nav a,
+    .nav.mobile-open a {
+
+        min-width:
+            min(230px, 86vw);
+
+        font-size: 16px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RTL
+========================================================= */
+
+html[dir="rtl"] .nav a,
+html[dir="rtl"] .nav.mobile-open a {
+
+    text-align: center;
+
+}
